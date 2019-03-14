@@ -44,9 +44,9 @@ public:
 		return count;
 	}
 	template <class func>
-	set<pair<Date, string>> FindIf(func predicate) const {
-		set<pair<Date, string>> res;
-		for (auto x : database) {
+	vector<pair<Date, string>> FindIf(func predicate) const {
+		vector<pair<Date, string>> res;
+		for (auto x : database_history) {
 			for (auto y : x.second) {
 				if (predicate(x.first, y)) {
 					res.insert(pair<Date, string>(x.first, y));
